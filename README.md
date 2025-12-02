@@ -84,35 +84,40 @@ Options Page: Show on the global "Site Options" page.
 
 Retrieve any field value using the simple helper function:
 
-$value = get_sas_field('field_name');
+// $value = get_sas_field('field_name');
 
 
 Examples
 
 Basic Fields (Text, Color)
 
+/*
 $title = get_sas_field('hero_title');
 $bg_color = get_sas_field('hero_bg_color');
 
 if( $title ) {
     echo '<h1 style="color: ' . esc_attr($bg_color) . ';">' . esc_html($title) . '</h1>';
 }
+*/
 
 
 Image Field
 
 Returns the Attachment ID. Use WordPress functions to display it.
 
+/*
 $image_id = get_sas_field('hero_image');
 if( $image_id ) {
     echo wp_get_attachment_image( $image_id, 'full' );
 }
+*/
 
 
 Gallery Field
 
 Returns an array of Attachment IDs.
 
+/*
 $gallery_ids = get_sas_field('product_gallery');
 
 if( $gallery_ids ) {
@@ -124,12 +129,14 @@ if( $gallery_ids ) {
     }
     echo '</div>';
 }
+*/
 
 
 Repeater Field
 
 Loop through rows of data. Example: A slider with Title, Image, and Background Color.
 
+/*
 $slides = get_sas_field('home_slider'); 
 
 if( $slides ) {
@@ -149,12 +156,14 @@ if( $slides ) {
     }
     echo '</div>';
 }
+*/
 
 
 Group Field
 
 Access sub-fields directly from the group array.
 
+/*
 $hero = get_sas_field('hero_section');
 
 if( $hero ) {
@@ -163,13 +172,16 @@ if( $hero ) {
     echo '<p>' . esc_html($hero['sub_text']) . '</p>';
     echo '</div>';
 }
+*/
 
 
 Options Page (Global Data)
 
+/*
 // Retrieve data saved in "Site Options"
 $footer_text = get_sas_field('footer_copyright_text');
 echo '<div class="footer">' . esc_html($footer_text) . '</div>';
+*/
 
 
 📄 License
